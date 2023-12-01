@@ -1,0 +1,11 @@
+default:
+  @just --list
+
+build:
+  cc *.c -o main
+
+test: build
+  ./main test.txt
+
+run FILENAME: build
+  ./main {{FILENAME}}
